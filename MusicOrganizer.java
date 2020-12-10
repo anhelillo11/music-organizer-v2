@@ -85,8 +85,10 @@ public class MusicOrganizer
     
     
     public void allListFiles() {
+        int contador = 1;
         for(String fileName : files){
-            System.out.println(fileName);
+            System.out.println(contador + fileName);
+            contador++;
         }
     }
 }
