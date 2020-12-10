@@ -84,11 +84,25 @@ public class MusicOrganizer
     }
     
     
-    public void allListFiles() {
+    public void listAllFiles() {
         int contador = 1;
         for(String fileName : files){
             System.out.println(contador + fileName);
             contador++;
+        }
+    }
+    
+    public void listMatching(String searchString){
+        boolean encontrado = false;
+        for(String fileName : files){
+            
+            if(fileName.contains(searchString)) {
+                System.out.println(fileName);
+                encontrado = true;
+            }            
+        }
+        if(encontrado == false) {
+                System.out.println("El parametro introducido no corresponde con ninguno de los archivos");               
         }
     }
 }
