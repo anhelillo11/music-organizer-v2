@@ -85,8 +85,9 @@ public class MusicOrganizer
     
     
     public void listAllFiles() {
-        int contador = 1;
-        for(String fileName : files){
+        int contador = 0;
+        while(contador < files.size()){
+            String fileName = files.get(contador);
             System.out.println(contador + fileName);
             contador++;
         }
@@ -102,7 +103,19 @@ public class MusicOrganizer
             }            
         }
         if(encontrado == false) {
-                System.out.println("El parametro introducido no corresponde con ninguno de los archivos");               
+            System.out.println("El parametro introducido no corresponde con ninguno de los archivos");               
         }
     }
+    
+    public void playSamplesArtist(String artist) {
+        for(String cancion : files){
+            if(cancion.contains(artist)){
+                player.playSample(cancion);
+                
+            }
+        }
+        
+    }
+    
+    
 }
