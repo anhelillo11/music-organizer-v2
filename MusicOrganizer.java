@@ -88,7 +88,7 @@ public class MusicOrganizer
         int contador = 0;
         while(contador < files.size()){
             String fileName = files.get(contador);
-            System.out.println(contador + fileName);
+            System.out.println(fileName);
             contador++;
         }
     }
