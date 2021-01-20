@@ -125,20 +125,17 @@ public class MusicOrganizer
     * no se encuentra ninguna correspondencia
      */
     public int findFirst(String searchString) {
-        int aDevolver = 0;
-        boolean encontrado = false;
-        int index = 1;
-        while(encontrado == true ){
-            
-            if(files.contains(searchString)) {                
-                encontrado = true;
-                aDevolver = index;
-            }            
-            index++;
+        int index = 0;
+        int x = 0;
+        while(index< files.size() && x == 0){            
+            if(files.get(index)==(searchString)) {                
+                x = x + 1;
+            } 
+            index++;            
         }
-        if(encontrado == false) {
-            aDevolver = -1;               
+        if(x == 0) {
+            index = -1;               
         }
-        return aDevolver;
+        return index;
     }
 }
