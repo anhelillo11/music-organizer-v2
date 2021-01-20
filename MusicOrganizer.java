@@ -126,16 +126,21 @@ public class MusicOrganizer
      */
     public int findFirst(String searchString) {
         int index = 0;
-        int x = 0;
-        while(index< files.size() && x == 0){            
+        boolean encontrado = false;
+        int aDevolver = 0;
+        while(index < files.size() ){            
             if(files.get(index)==(searchString)) {                
-                x = x + 1;
+                encontrado = true;
+                aDevolver = index;
+                index = files.size();
             } 
-            index++;            
+            else{
+                index++;    
+            }
         }
-        if(x == 0) {
-            index = -1;               
+        if(encontrado == false) {
+            aDevolver = -1;               
         }
-        return index;
+        return aDevolver;
     }
 }
